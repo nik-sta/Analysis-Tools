@@ -1,0 +1,70 @@
+%%
+% E = mc^2 - Book & Chapter Summary, for the English cuurse "Where Tech Meets BEC".
+%
+% (C) 2016 by Nikola Stankovic, University of Applied Sciences Rapperswil, Switzerland
+%%
+
+\documentclass[a4paper,12pt]{scrreprt}
+
+%% Load packages
+%% ========
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage[]{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\onehalfspacing
+
+\geometry{papersize={210mm,297mm},total={160mm,240mm},top=31mm,bindingoffset=15mm}
+
+%% Own variables
+%% ========
+\newcommand{\documenttitel}{Analysis Tools}
+\newcommand{\documentsubtitel}{Algorithmen und Datenstrukturen 1}
+\newcommand{\documentauthors}{Nikola Stanković}
+
+%% PDF meta informations
+%% ========
+\pdfinfo{
+   /Author (\documentauthors)
+   /Title  (\documenttitel)
+   /CreationDate (D:20040502195600)
+   /Subject (Algorithmen und Datenstrukturen 1, Analysis Tools)
+   /Keywords (AD1;Analysis-Tools;HSR)
+}
+
+\begin{document}
+
+\author{
+  Stanković, Nikola
+}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/HSR_Logo_CMYK.jpg}\par\vspace{1cm}
+	{\scshape\LARGE Hochschule für Technik Rapperswil \par}
+	\vspace{1cm}
+	{\scshape\Large \documentsubtitel \par}
+	\vspace{0.5cm}
+	{\huge\bfseries \line(1,0){250} \\ \documenttitel \\ \line(1,0){250} \par}
+	\vspace{2cm}
+	{\Large\itshape \documentauthors \par}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+
+%% All content of this work
+%% \input{context}
+
+\end{document}
