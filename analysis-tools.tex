@@ -1,25 +1,40 @@
-%%
-% E = mc^2 - Book & Chapter Summary, for the English cuurse "Where Tech Meets BEC".
-%
-% (C) 2016 by Nikola Stankovic, University of Applied Sciences Rapperswil, Switzerland
-%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Summary of Analysis Tools in Data Structues & Algorithms in Java.
+%% =================================================================
+%% filename: 	analysis-tools.tex
+%% created:		20.04.2016
+%% -----------------------------------------------------------------
+%% (C) 2016 by 	Nikola Stanković
+%%				University of Applied Sciences Rapperswil
+%%				Switzerland
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper,12pt]{scrreprt}
+\documentclass[a4paper,12pt]{scrartcl}
 
 %% Load packages
 %% ========
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}	% this is needed for umlauts
+\usepackage[ngerman]{babel} % this is needed for umlauts
+\usepackage[T1]{fontenc}    % this is needed for correct output of umlauts in pdf
 \usepackage{lmodern}
-\usepackage[english]{babel}
 \usepackage[]{setspace}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage{hyperref}		% this is needed for the hyper references
+\usepackage{nicefrac}		% this is needed for the skewed fractions
+
 \onehalfspacing
+
+%% Glossary
+\usepackage[xindy]{glossaries} 
+\input{glossary}
+\makeglossaries
+
+%% For drawing the mindmap
+\usepackage{tikz}
+\usetikzlibrary{mindmap,trees}
 
 \geometry{papersize={210mm,297mm},total={160mm,240mm},top=31mm,bindingoffset=15mm}
 
@@ -39,32 +54,46 @@
    /Keywords (AD1;Analysis-Tools;HSR)
 }
 
+%% For header and footer
+\usepackage{scrpage2}\pagestyle{scrheadings} 
+\ihead{\documenttitel}
+\ohead{Inhaltsverzeichnis}
+
 \begin{document}
 
 \author{
   Stanković, Nikola
 }
 
+
 \begin{titlepage}
 	\centering
 	\includegraphics[width=0.5\textwidth]{images/HSR_Logo_CMYK.jpg}\par\vspace{1cm}
-	{\scshape\LARGE Hochschule für Technik Rapperswil \par}
 	\vspace{1cm}
-	{\scshape\Large \documentsubtitel \par}
-	\vspace{0.5cm}
-	{\huge\bfseries \line(1,0){250} \\ \documenttitel \\ \line(1,0){250} \par}
-	\vspace{2cm}
-	{\Large\itshape \documentauthors \par}
+	{\huge \bfseries \line(1,0){250} \\ \documenttitel \\ \line(1,0){250} \par}
+	\vspace{0.5cm}	
+	{\documentsubtitel \par}
+	\vspace{1cm}
+	{\Large \bfseries \documentauthors \par}
 
 	\vfill
 
-% Bottom of the page
-	{\large \today\par}
+	% Bottom of the title page
+	{\large Hochschule für Technik Rapperswil \\ \today\par}
 \end{titlepage}
 
 \tableofcontents
+\newpage
 
 %% All content of this work
-%% \input{context}
+\input{01_einfuehrung}
+\input{02_uebersicht-der-thematik}
+\input{03_empirische-analyse}
+\input{04_mathematische-funktionen}
+\input{05_big-oh-notation}
+
+%Print the glossary on a new page
+\newpage
+\printglossaries
 
 \end{document}

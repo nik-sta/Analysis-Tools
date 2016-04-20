@@ -1,0 +1,25 @@
+\section{Übersicht der Thematik}
+Das folgende Mindmap \emph{Abbildung \ref{fig:mindmap-thematik}} soll grob die behandelten und prüfungsrelevanten Themen visualisieren.
+
+%% Beginn des Mindmaps
+\begin{figure}[!h]
+\centering
+	\begin{tikzpicture}
+  		\path[mindmap,concept color={rgb:red,1;green,2;blue,5},text=white]
+    	node[concept] {Analysis Tools} [clockwise from=-30]
+    	child[concept] { 
+    		node[concept] {Empirische Analyse}
+    	}
+    	child[concept, thick] { 
+    		node[concept] {Mathematische Funktionen} 
+    	}
+    	child[concept, thick] { 
+    		node[concept] {Big-Oh Notation} 
+    	};   
+	\end{tikzpicture}
+	
+\caption{Mindmap über die behandelte Thematik in dieser Arbeit.}
+\label{fig:mindmap-thematik}
+\end{figure}
+
+Für die Modulprüfung ist es notwendig, die \textbf{O-Abschätzung} durchführen zu können. Als gegeben im Test ist das Zeitverhalten eines Algorithmus anzusehen. In der Klausur vom Frühlingssemester 2015 machte diese Aufgabe \textbf{\nicefrac{1}{9} der Gesamtpunktzahl} aus und ist somit eines der Hauptthemen.
