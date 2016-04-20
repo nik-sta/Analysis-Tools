@@ -1,0 +1,13 @@
+\newpage
+\section{Empirische Analyse}
+\begin{lstlisting}
+long startTime = System.currentTimeMillis();
+// zu testender Algorithmus ...
+long elapsedTime = System.currentTimeMillis() - startTime;   
+\end{lstlisting}
+
+\begin{lstlisting}
+long startTime = System.nanoTime();
+// zu testender Algorithmus ...
+long estimatedTime = System.nanoTime() - startTime;
+\end{lstlisting}

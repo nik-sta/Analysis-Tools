@@ -1,13 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Summary of Analysis Tools in Data Structues & Algorithms in Java.
-%% =================================================================
+%% =================================================
 %% filename: 	analysis-tools.tex
 %% created:		20.04.2016
 %% -----------------------------------------------------------------
 %% (C) 2016 by 	Nikola Stanković
 %%				University of Applied Sciences Rapperswil
 %%				Switzerland
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[a4paper,12pt]{scrartcl}
 
@@ -22,14 +22,14 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{hyperref}		% this is needed for the hyper references
+\usepackage[colorlinks=true]{hyperref}		% this is needed for the hyper references
 \usepackage{nicefrac}		% this is needed for the skewed fractions
 
 \onehalfspacing
 
 %% Glossary
 \usepackage[xindy]{glossaries} 
-\input{glossary}
+\input{contents/glossary}
 \makeglossaries
 
 %% For drawing the mindmap
@@ -38,26 +38,65 @@
 
 \geometry{papersize={210mm,297mm},total={160mm,240mm},top=31mm,bindingoffset=15mm}
 
+\setlength{\headheight}{20pt}
+
 %% Own variables
 %% ========
-\newcommand{\documenttitel}{Analysis Tools}
+\newcommand{\documenttitel}{Analyse Tools}
 \newcommand{\documentsubtitel}{Algorithmen und Datenstrukturen 1}
 \newcommand{\documentauthors}{Nikola Stanković}
+\newcommand\HRule{\noindent\rule{\linewidth}{2pt}}
 
 %% PDF meta informations
 %% ========
-\pdfinfo{
-   /Author (\documentauthors)
-   /Title  (\documenttitel)
-   /CreationDate (D:20040502195600)
-   /Subject (Algorithmen und Datenstrukturen 1, Analysis Tools)
-   /Keywords (AD1;Analysis-Tools;HSR)
+\hypersetup{
+	pdfauthor={\documentauthors},%
+	pdftitle={\documenttitel},%
+	pdfsubject={\documentsubtitel},%
+	pdfkeywords={AD1, Analysis-Tools, Big-Oh Notation, HSR},%
+	pdfproducer={LaTeX},%
+	pdfcreator={pdfLaTeX}
+	linktoc=all,
+    linkcolor=blue
+}
+
+%% For displaying Java code with syntax highlighting
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
 }
 
 %% For header and footer
-\usepackage{scrpage2}\pagestyle{scrheadings} 
-\ihead{\documenttitel}
-\ohead{Inhaltsverzeichnis}
+\usepackage{calc}
+\usepackage{lipsum}
+\usepackage{scrpage2}
+\usepackage{lastpage} 
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\automark[chapter]{section}
+\ohead{\headmark}
+\ihead{\documenttitel, Schwerpunkt: Big-Oh Notation}
+\setheadsepline[\textwidth+5pt]{0.5pt}
+\ofoot[{Seite \thepage\ von \pageref*{LastPage}}]{Seite \thepage\ von \pageref*{LastPage}}
 
 \begin{document}
 
@@ -65,32 +104,38 @@
   Stanković, Nikola
 }
 
-
 \begin{titlepage}
-	\centering
-	\includegraphics[width=0.5\textwidth]{images/HSR_Logo_CMYK.jpg}\par\vspace{1cm}
-	\vspace{1cm}
-	{\huge \bfseries \line(1,0){250} \\ \documenttitel \\ \line(1,0){250} \par}
-	\vspace{0.5cm}	
-	{\documentsubtitel \par}
-	\vspace{1cm}
-	{\Large \bfseries \documentauthors \par}
-
-	\vfill
-
-	% Bottom of the title page
-	{\large Hochschule für Technik Rapperswil \\ \today\par}
+	\HRule
+	\vspace*{5pt}
+	\begin{flushright}
+	{\Huge \textbf{\documenttitel, \\ Schwerpunkt: Big-Oh Notation} \\ \vspace*{12.5pt} \Large \documentsubtitel}
+	\end{flushright}
+	\vspace*{5pt}
+	\HRule
+	\begin{flushright}
+	\vspace{20pt}
+	\LARGE
+	\documentauthors
+	\end{flushright}
+	
+	\vfill	
+	
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{images/HSR_Logo_CMYK.jpg}\par\vspace{1cm}
+		{\large \today \par}
+	\end{center}
 \end{titlepage}
 
 \tableofcontents
 \newpage
 
 %% All content of this work
-\input{01_einfuehrung}
-\input{02_uebersicht-der-thematik}
-\input{03_empirische-analyse}
-\input{04_mathematische-funktionen}
-\input{05_big-oh-notation}
+\input{contents/01_aufgabenstellung}
+\input{contents/02_uebersicht-der-thematik}
+\input{contents/03_einfuehrung}
+\input{contents/04_empirische-analyse}
+\input{contents/05_mathematische-funktionen}
+\input{contents/06_big-oh-notation}
 
 %Print the glossary on a new page
 \newpage
