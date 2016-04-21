@@ -1,13 +1,24 @@
-\newpage
 \section{Empirische Analyse}
-\begin{lstlisting}
+
+Eine Möglichkeit die Effizienz eines \gls{algorithmus} zu ermitteln, ist es diesen \gls{algorithmus} zu implementieren und experimentell durch das Ausführen zu messen. Beispielsweise mit den folgenden Code-Fragmenten \ref{lst:code-fragment-1} und \ref{lst:code-fragment-2}.
+
+\par \medskip
+
+\renewcommand{\lstlistingname}{Code Fragment}% Listing -> Code Fragment
+
+\begin{lstlisting}[captionpos=b,caption={Typische Lösung für die Zeitmessung eines Algorithmus in Java},label={lst:code-fragment-1}]
 long startTime = System.currentTimeMillis();
 // zu testender Algorithmus ...
 long elapsedTime = System.currentTimeMillis() - startTime;   
 \end{lstlisting}
 
-\begin{lstlisting}
+\par \medskip
+
+\begin{lstlisting}[captionpos=b,caption={Zeitmessung eines Algorithmus in Java mit nanoTime()},label={lst:code-fragment-2}]
 long startTime = System.nanoTime();
 // zu testender Algorithmus ...
 long estimatedTime = System.nanoTime() - startTime;
 \end{lstlisting}
+
+\subsection*{Probleme bzw. Grenzen der empirischen Analyse}
+Das Resultat der Messung wird von Computer zu Computer und schlimmer von Ausführung zu Ausführung sich unterscheiden. Daher ist das Vergleichen von zwei \glsps{algorithmus} äusserst schwierig. Insbesondere wird der vollständig Implementierte \gls{algorithmus} vorausgesetzt und das ausprobieren von unendlich vielen Inputgrössen benötigt unendlich viel Zeit, was wir nicht aufbringen können.

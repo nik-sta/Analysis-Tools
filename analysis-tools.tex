@@ -25,6 +25,14 @@
 \usepackage[colorlinks=true]{hyperref}		% this is needed for the hyper references
 \usepackage{nicefrac}		% this is needed for the skewed fractions
 
+%% For the plots
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+%% Use Helvetica (is sans serif) as default font
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+
 \onehalfspacing
 
 %% Glossary
@@ -98,6 +106,8 @@
 \setheadsepline[\textwidth+5pt]{0.5pt}
 \ofoot[{Seite \thepage\ von \pageref*{LastPage}}]{Seite \thepage\ von \pageref*{LastPage}}
 
+\setlength{\parindent}{0em} 
+ 
 \begin{document}
 
 \author{
@@ -105,10 +115,11 @@
 }
 
 \begin{titlepage}
+	\vspace*{2cm}
 	\HRule
 	\vspace*{5pt}
 	\begin{flushright}
-	{\Huge \textbf{\documenttitel, \\ Schwerpunkt: Big-Oh Notation} \\ \vspace*{12.5pt} \Large \documentsubtitel}
+	{\Huge \textbf{\documenttitel, \\ Schwerpunkt: Big-Oh Notation} \\ \vspace*{25pt} \Large \documentsubtitel}
 	\end{flushright}
 	\vspace*{5pt}
 	\HRule
